@@ -53,12 +53,14 @@ spec:
 EOF
 
 kubectl get inferenceservice intent-classifier -n intent
+
+kubectl get all -n intent
 ```
 
 ### Port-forward to access the model
 
 ```
-kubectl -n ml port-forward svc/<svc-name> 8080:80
+kubectl -n intent port-forward svc/<svc-name> 8080:80 --address 0.0.0.0
 ```
 
 ### Inference the Model
